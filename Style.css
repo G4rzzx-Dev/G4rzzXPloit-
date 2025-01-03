@@ -1,0 +1,602 @@
+@import url('https://fonts.googleapis.com/css2?family=Jersey+15&family=Jersey+25+Charted&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Chewy&family=Jersey+15&family=Jersey+25+Charted&family=Jua&display=swap');
+
+/* Google Font For Card-Slider */
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@1,14..32,100..900&display=swap');
+
+.material-symbols-outlined {
+  font-variation-settings:
+  'FILL' 0,
+  'wght' 400,
+  'GRAD' 0,
+  'opsz' 24
+}
+
+.material-symbols-outlined.icon-menu {
+  font-size: 35px;
+}
+
+.fa-solid.fa-circle {
+  font-size: 5px;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f5f5f5;
+  color: #333;
+  }
+  
+main {
+  flex: 1;
+}
+  
+.picture {
+    flex-direction: row;
+  }
+  
+/* Navbar Styling */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1px 20px;
+  box-shadow: 5px -6px 5px 10px #2e2e2e;
+  background-color: #bfbfab;
+  color: white;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+}
+
+.navbar h1 {
+  font-size: 50px;
+  font-family: "Jersey 15", serif;
+  font-weight: 400;
+  font-style: normal;
+  margin-right: auto;
+  margin-left: 14px;
+}
+
+#Good {
+  text-align: center; /* Rata tengah */
+  margin-top: -135px; /* Atur jarak atas */
+  margin-bottom: 15px; /* Atur jarak bawah */
+}
+
+.navbar .logo {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.navbar .menu-button {
+  font-size: 37px;
+  background: #bfbfab;
+  border: none;
+  color: white;
+  text-align: center;
+  padding-left: 8px;
+  margin-right: 45px;
+  padding-right: 8px;
+  padding-top: 5px;
+  border-radius: 7px;
+  border: 3px solid #4b4b4b; /* Warna merah untuk border */
+  box-shadow: 5px 5px 10px #2e2e2e;
+}
+
+.navbar .menu-button .fa-xmark {
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+.fa-xmark {
+  font-size: 35px;
+  padding: 0;
+  margin: 0;
+}
+
+/* Default menu state (hidden) */
+.nav-links {
+  list-style: none;
+  display: flex; /* Menu hidden by default */
+  flex-direction: column;
+  align-items: center;
+  position: absolute;
+  top: -16px;
+  right: 237px;
+  background-color: #b4b4b4;
+  background: linear-gradient(to bottom, #f0f0f0, #d6d6d6);
+  padding: 10px;
+  padding-bottom: 205px;
+  width: 190px;
+  border-radius: 0 0 10px 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  /* Animasi awal */
+  transform: translateX(-100%); /* Menu bergerak keluar layar ke kiri */
+  opacity: 0; /* Awalnya transparan */
+  transition: transform 0.6s ease-out, opacity 0.6s ease-out; /* Smooth animasi */
+}
+
+/* Show menu when class added */
+.nav-links.show {
+  transform: translateX(0); /* Kembali ke posisi semula */
+  opacity: 1; /* Menu muncul */
+}
+
+/* Gaya untuk kontainer foto profil */
+.profile-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  padding-right: 10px;
+  padding-left: 10px;
+  width: 190px;
+  margin-top: -10px;
+  margin-bottom: 20px;
+  background-color: #909090;
+  background: linear-gradient(to bottom, gray, white);
+  border-radius: 0 0 30px 30px;
+  }
+
+/* Gaya untuk foto profil */
+.profile-picture {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 2px solid #BFBFAB; /* Warna hijau khas WhatsApp */
+  box-shadow: -5px 5px 5px rgba(0, 0, 0, 0.2);
+  }
+
+/* Gaya untuk gambar dalam foto profil */
+.profile-picture img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  }
+
+/* Gaya untuk nama pengguna */
+.profile-name {
+  font-size: 28px;
+  font-family: "Jua", serif;
+  font-weight: bold;
+  color: #333;
+  text-align: center;
+  align-items: center;
+  margin-top: 15px;
+  }
+  
+  /* Container untuk menyelaraskan konten */
+.container-list {
+  max-width: 700px;
+  margin-left: 15px;
+  padding: 10px;
+}
+
+/* Custom list */
+.custom-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* List item */
+.custom-list p {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 15px;
+  line-height: 1.5;
+  text-align: left;
+  font-size: 16px;
+  color: black;
+}
+
+/* Custom bullet */
+.custom-bullet {
+  flex-shrink: 0;
+  width: 12px;
+  height: 12px;
+  background-color: #BFBFAB;
+  border-radius: 50%;
+  margin-right: 15px;
+  margin-top: 5px;
+}
+
+.Pick-Menu {
+  display: flex; /* Buat elemen di dalam li berbaris */
+  flex-direction: column;
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+.Pick-Menu li {
+  color: white;
+  text-align: center;
+  align-items: center;
+}
+
+.Pick-Menu button {
+  border-radius: 5px;
+}
+
+.Icon-Home i, .Icon-About i, .Icon-Services i, .Icon-Contact i {
+    margin-right: 7px; /* Jarak antara ikon dan teks */
+}
+
+.Icon-Home, .Icon-About, .Icon-Services, .Icon-Contact {
+  background-color: #909090;
+  margin-bottom: 35px; /* Jarak antar elemen vertikal */
+}
+
+.nav-links li {
+  margin: 20px 40px 20px 40px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+.nav-links div a {
+  display: flex; /* Flexbox untuk menyelaraskan ikon dan teks */
+  align-items: center; /* Pastikan sejajar vertikal */
+  text-align: center;
+}
+
+.nav-links li:hover {
+  color: #FFD700;
+}
+
+.nav-links button:hover {
+  background-color: #BFBFAB;
+  transform: scale(1.1);
+  transition: color 0.3s ease, transform 0.3s ease;
+  transition: transform 0.3s ease, background-color 0.3s ease; /* Tambahkan animasi transisi */
+}
+
+/* Show menu when class added */
+.nav-links.show {
+  display: flex;
+}
+
+main {
+  padding: 40px 20px;
+  padding-top: 210px;
+  max-width: 1200px;
+  margin: auto;
+  background-color: white;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.about-us {
+  display: flex;
+  flex-direction: row;
+}
+
+.about-us img {
+  margin-left: 20px;
+}
+
+.title-about h1 {
+  font-family: "Jersey 15", serif;
+  font-size: 55px;
+  text-align: center;
+  align-items: center;
+}
+
+.about-goal {
+  display: flex;
+  flex-direction: row-reverse;
+}
+
+.about-goal img {
+  margin-left: 40px;
+  margin-right: 10px;
+}
+
+.title-goal h1 {
+  font-family: "Jersey 15", serif;
+  font-size: 55px;
+  text-align: center;
+  align-items: center;
+}
+
+section {
+  margin-bottom: 40px;
+}
+
+section h2 {
+  border-bottom: 2px solid #BFBFAB;
+  padding-bottom: 10px;
+  margin-bottom: 20px;
+}
+
+footer {
+  background-color: #343a40;
+  color: white;
+  align-items: center;
+  text-align: center;
+  padding: 10px 20px;
+  padding-top: 60px;
+  padding-bottom: 60px;
+  position: relative;
+}
+
+/* Styling untuk tombol daftar game */
+.List {
+  background-color: #BFBFAB;
+  font-size: 16px;
+  font-weight: bold;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 7px;
+  cursor: pointer;
+  text-decoration: none;
+  text-align: center;
+  list-style: none;
+  box-shadow: 5px 5px 10px #6b6b6b;
+}
+
+.List:hover {
+  background-color: #787878;
+}
+
+.List a {
+  color: none;
+  text-decoration: none;
+}
+
+.List a:hover {
+  text-decoration: none;
+}
+
+li {
+    color: #000000;
+    text-align: center;
+    font-style: italic;
+    font-size: large;
+}
+
+/* Responsive Card-Slider */
+.card-wrapper {
+    max-width: 1100px;
+    margin: 0 0 35px;
+    margin-right: 60px;
+    margin-left: 60px;
+    padding: 20px 0;
+    padding-right: 50px;
+    overflow: hidden;
+}
+
+.card-list .card-item {
+    list-style: none;
+}
+
+.card-list .card-item .card-link {
+    user-select: none;
+    display: block;
+    background: #fff;
+    padding: 18px;
+    border-radius: 12px;
+    text-decoration: none;
+    border: 2px solid transparent;
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.5);
+    transition: 0.2s ease;
+}
+
+.card-list .card-item .card-link:active {
+    cursor: grabbing;
+}
+
+.card-list .card-item .card-link:hover {
+    border-color: #007BFF;
+}
+
+.card-list .card-link .card-image {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+}
+
+.card-list .card-link .badge {
+    color: #007BFF;
+    padding: 8px 16px;
+    font-size: 0.95rem;
+    font-weight: 500;
+    margin: 16px 0 18px;
+    background: rgb(168, 199, 240);
+    width: fit-content;
+    border-radius: 50px;
+    -webkit-border-radius: 50px;
+    -moz-border-radius: 50px;
+    -ms-border-radius: 50px;
+    -o-border-radius: 50px;
+}
+
+.card-list .card-link .badge.deface {
+    color: grey;
+    background: #d3d3d3;
+}
+
+.card-list .card-link .badge.phising {
+    color: #ff9500;
+    background: #ffe5c6;
+}
+
+.card-list .card-link .badge.ddos {
+    color: rgb(77, 255, 0);
+    background: #d1ffc6;
+}
+
+.card-list .card-link .badge.osint {
+    color: rgb(0, 153, 255);
+    background: #c4e5ff;
+}
+
+.card-list .card-link .badge.rat {
+    color: rgb(255, 0, 0);
+    background: #ffd5d5;
+}
+
+.card-list .card-link .card-title {
+    font-size: 1.19rem;
+    color: black;
+    font-weight: 600;
+}
+
+.card-list .card-link .card-button {
+    height: 35px;
+    width: 35px;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+    margin: 30px 0 5px;
+    background: none;
+    cursor: pointer;
+    border: 2px solid #007BFF;
+    color:#007BFF;
+    transform: rotate(-45deg);
+    -webkit-transform: rotate(-45deg);
+    -moz-transform: rotate(-45deg);
+    -ms-transform: rotate(-45deg);
+    -o-transform: rotate(-45deg);
+    transition: 0.4s ease;
+    -webkit-transition: 0.4s ease;
+    -moz-transition: 0.4s ease;
+    -ms-transition: 0.4s ease;
+    -o-transition: 0.4s ease;
+}
+
+.card-list .card-link:hover .card-button {
+    color: #ffffff;
+    background: #007BFF;
+}
+
+.card-wrapper .swiper-pagination-bullet {
+    height: 13px;
+    width: 13px;
+    opacity: 0.5;
+    background: #5372f0;
+}
+
+.card-wrapper .swiper-pagination-bullet-active {
+    opacity: 1;
+}
+
+.card-wrapper .swipper-slide-button {
+    color: #5372f0;
+    margin-top: -35px;
+}
+
+/* For larger screens */
+@media screen and (min-width: 768px) {
+  .menu-button {
+    display: none; /* Hide menu button on larger screens */
+  }
+  
+  .profile-container {
+    display: none;
+  }
+
+  .nav-links {
+    display: flex;
+    background: none;
+    flex-direction: row;
+    position: static;
+    transform: none; /* Hapus efek animasi */
+    opacity: 1; /* Pastikan menu tetap terlihat */
+    background-color: transparent;
+    width: auto;
+    padding: 0;
+    box-shadow: none;
+  }
+
+  .nav-links li {
+    margin: 0 10px;
+  }
+  
+.Pick-Menu button:hover {
+  transform: scale(1.1); /* Membesar saat dihover */
+  background-color: #a0a0a0; /* Ubah warna background */
+  transition: transform 0.3s ease, background-color 0.3s ease; /* Tambahkan animasi transisi */
+}
+
+.Pick-Menu i:hover {
+  color: #FFD700; /* Ubah warna ikon */
+  transform: rotate(15deg); /* Tambahkan efek rotasi */
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+  
+  .style-menu {
+    display: none;
+  }
+  
+  .Icon-Home, .Icon-About, .Icon-Services, .Icon-Contact {
+    background: none;
+    margin-bottom: 0;
+    margin-right: 25px;
+    padding-right: 0;
+    padding-left: 0;
+    border: none;
+  }
+  
+  .Icon-Home i, .Icon-About i, 
+  .Icon-Services i, .Icon-Contact i {
+    margin-right: 7px; 
+  }
+  
+.Pick-Menu {
+  display: flex; /* Buat elemen di dalam li berbaris */
+  flex-direction: row;
+  margin-top: 15px;
+  }
+  
+.about-us img {
+  margin-left: 0;
+  margin-right: 20px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+.card-wrapper {
+    margin: 0 0 25px;
+    padding-right: 80px;
+    }
+  
+.card-wrapper .swipper-slide-button {
+    display: none;
+    }
+    
+.about-us {
+  display: flex;
+  flex-direction: column;
+    }
+    
+.about-goal {
+  display: flex;
+  flex-direction: column;
+    }
+    
+.about-goal img {
+  margin-left: 0;
+  margin-right: 0;
+  }
+}
